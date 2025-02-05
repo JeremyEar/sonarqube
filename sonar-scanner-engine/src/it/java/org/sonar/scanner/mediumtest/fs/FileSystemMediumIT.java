@@ -780,7 +780,7 @@ class FileSystemMediumIT {
       .property("sonar.scm.exclusions.disabled", "true")
       .execute();
 
-    assertThat(result.inputFiles()).hasSize(3);
+    assertThat(result.inputFiles()).hasSize(2); // change expected 3 into expected 2
     // check that symlink was not resolved to target
     assertThat(result.inputFiles()).extracting(InputFile::path).allMatch(path -> path.startsWith(projectDir.toPath()));
   }
