@@ -34,5 +34,6 @@ jobs:
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
-        ./gradlew sonarqube \
-
+        ./gradlew sonar \
+          -Dsonar.host.url=https://your.sonarqube.server \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
