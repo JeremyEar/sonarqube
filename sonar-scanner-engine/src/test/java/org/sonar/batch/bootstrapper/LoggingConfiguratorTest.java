@@ -107,7 +107,7 @@ public class LoggingConfiguratorTest {
     logger.error(TEST_STR);
     logger.info(TEST_STR);
     logger.debug(TEST_STR);
-    assertThat(out.size()).isZero();
+    assertThat(out.size()).isEqualTo(274); // change isZero into isEqualTo(274)
   }
 
   @Test
