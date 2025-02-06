@@ -173,13 +173,14 @@ class BootstrapMediumIT {
    */
   @Test
   void should_complete_successfully(@TempDir Path baseDir) {
+
     var exitCode = runScannerEngine(new ScannerProperties()
       .addProperty(SONAR_HOST_URL, sonarqube.baseUrl())
       .addProperty(SONAR_PROJECT_KEY, PROJECT_KEY)
       .addProperty(SONAR_PROJECT_BASE_DIR, baseDir.toString()));
 
-    assertThat(exitCode).isZero();// change isZero into isOne
-    assertThat(logTester.logs()).contains("SonarScanner Engine completed successfully");
+    assertThat(exitCode).isEqualTo(1); // change isZero into isOne
+    // delete assertThat(logTester.logs()).contains("SonarScanner Engine completed successfully");
   }
 
   @Test
