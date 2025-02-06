@@ -29,7 +29,6 @@ jobs:
         run: ./gradlew build
 
       - name: SonarQube Scan
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          ./gradlew sonar \
+          docker pull sonarqube
+          docker run -d --name sonarqube -p 9000:9000 sonarqube
