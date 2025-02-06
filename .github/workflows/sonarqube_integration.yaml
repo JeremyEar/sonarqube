@@ -33,6 +33,3 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           ./gradlew sonar \
-            -Dsonar.projectKey=sonarqube \
-            -Dsonar.host.url=https://sonarqube.example.com \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
